@@ -882,6 +882,7 @@ MonoBehaviour:
   text: {fileID: 1217010557}
   fire: {fileID: 6880222555565516658, guid: 5094d1557b7552c48a113895b688591a, type: 3}
   dark: {fileID: 6390420178118919879, guid: de743d475308882439ad13cabe5d31eb, type: 3}
+  redtyphoon: {fileID: 3914555286410816316, guid: a5d9324f13ceaaf48a165f8680b6151e, type: 3}
   Player: {fileID: 808431827}
 --- !u!4 &1638743539
 Transform:

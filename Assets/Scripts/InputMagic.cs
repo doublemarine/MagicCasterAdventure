@@ -10,6 +10,7 @@ public class InputMagic : MonoBehaviour
     public Text text;
     public GameObject fire;
     public GameObject dark;
+    public GameObject redtyphoon;
     public GameObject Player;
     private Transform m_enemy = null;
 
@@ -40,6 +41,10 @@ public class InputMagic : MonoBehaviour
             Dark();
             inputField.text = "";
         }
+        else if(text.text == "redtyphoon"){
+            RedTyphoon();
+            inputField.text = "";
+        }
     }
 
     public void Fire()
@@ -49,5 +54,9 @@ public class InputMagic : MonoBehaviour
 
     public void Dark(){
         Instantiate(dark, m_enemy.transform.position,Quaternion.identity);
+    }
+
+    public void RedTyphoon(){
+        Instantiate(redtyphoon,new Vector3(Player.transform.position.x + 5,Player.transform.position.y,Player.transform.position.z), Quaternion.identity);
     }
 }
