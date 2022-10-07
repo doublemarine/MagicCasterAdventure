@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7391460947961771906}
   - component: {fileID: 7391460947961771917}
   - component: {fileID: 7391460947961771916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wizard
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369270325
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 6fc66c021eec74942b4e71a3fde4dc04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,6 +127,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  blockingLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &7391460947961771917
 Rigidbody2D:
   serializedVersion: 4
@@ -135,7 +138,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7391460947961771910}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -162,5 +165,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 1.92}
+  m_Size: {x: 0.41, y: 0.88}
   m_Direction: 0

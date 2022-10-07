@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     public GameObject Camera;
     public GameObject[] heartArray = new GameObject[5];
+    public LayerMask blockingLayer;
+    private CapsuleCollider2D capsule;
     private int heartCount;
     
     private GameObject fieldObject;
@@ -26,7 +28,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-         rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        capsule = GetComponent<CapsuleCollider2D>();
         fieldObject = GameObject.Find("Canvas");
         fieldObject.SetActive(false);
         speed = 3f;
