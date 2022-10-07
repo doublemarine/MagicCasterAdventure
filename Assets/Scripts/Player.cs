@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Camera.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z - 10);
+       Camera.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z - 5);
 
         if(Input.GetKey(KeyCode.Return)){
              fieldObject.SetActive(false);
@@ -50,8 +50,20 @@ public class Player : MonoBehaviour
     }
 
     public void Move(){
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        int x = (int)Input.GetAxisRaw("Horizontal");
+        int y = (int)Input.GetAxisRaw("Vertical");
+        
+        if(x != 0){
+            y = 0;
+            if(x == 1){
+                transform.localScale = new Vector3(1,1,1);
+            }else
+            {
+                transform.localScale = new Vector3(-1,1,1);
+            }
+        }else if(y != 0){
+            x = 0;
+        }
 
         Vector3 IdouHoukou = new Vector3(x, y, 0);
 
