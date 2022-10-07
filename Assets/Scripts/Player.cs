@@ -6,12 +6,22 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public GameObject Camera;
+    public GameObject[] heartArray = new GameObject[5];
+    private int heartCount;
     
     private GameObject fieldObject;
     private float speed;
     private Animator anim = null;
      private Rigidbody2D rb = null;
 
+
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Enemy"){
+            heartCount--;
+            heartArray[heartCount].SetActive(false);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +30,7 @@ public class Player : MonoBehaviour
         fieldObject = GameObject.Find("Canvas");
         fieldObject.SetActive(false);
         speed = 3f;
+        heartCount = 5;
     }
 
     // Update is called once per frame
