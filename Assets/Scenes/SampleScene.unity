@@ -1608,6 +1608,7 @@ GameObject:
   - component: {fileID: 1977655672}
   - component: {fileID: 1977655676}
   - component: {fileID: 1977655675}
+  - component: {fileID: 1977655677}
   m_Layer: 0
   m_Name: Wizard Enemy
   m_TagString: Enemy
@@ -1749,3 +1750,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1977655677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977655671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5b439f0ea4e3040842b8800ac49c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
