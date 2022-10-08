@@ -69,3 +69,5 @@ MonoBehaviour:
   - {fileID: 4496958579999389541, guid: 287a5482b82430543a01906cb25fc9f8, type: 3}
   wallMinimum: 315
   wallMaximum: 500
+  enemyMinimum: 1
+  enemyMaximum: 9

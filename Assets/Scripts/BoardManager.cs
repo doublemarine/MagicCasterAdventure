@@ -12,7 +12,7 @@ public class BoardManager : MonoBehaviour
     public GameObject[] enemyTiles;
 
     public int wallMinimum = 5, wallMaximum = 9;
-
+    public int enemyMinimum = 1, enemyMaximum = 9;
 
     
     void InitialiseList(){
@@ -66,6 +66,8 @@ public class BoardManager : MonoBehaviour
         BoardSetUp();
         InitialiseList();
         LayoutObjectatRandom(wallTiles, wallMinimum, wallMaximum);
+       // int enemyCount = (int)Mathf.Log(level,2f);
+        LayoutObjectatRandom(enemyTiles, enemyMinimum, enemyMaximum);
     }
         
     
