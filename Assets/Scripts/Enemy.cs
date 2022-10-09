@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    float speed = 1.0f;
+    float speed = 2.0f;
     public float     m_attenuation = 0.5f;
 
     private Vector3 m_velocity;
@@ -35,10 +35,12 @@ private bool skipMove = false;
     // Update is called once per frame
     void Update()
     {
-        m_velocity += ( target.position - transform.position ) * speed;
-        m_velocity *= m_attenuation;
-        transform.position += m_velocity *= Time.deltaTime;
-       
+        // m_velocity += ( target.position - transform.position ) * speed;
+        // m_velocity *= m_attenuation;
+        // transform.position += m_velocity *= Time.deltaTime;
+       if(Vector2.Distance(transform.position,target.position) > 0f){
+          transform.position = Vector2.MoveTowards(transform.position,target.position,speed*Time.deltaTime);
+       }
         
     }
 }
