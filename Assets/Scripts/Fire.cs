@@ -7,9 +7,7 @@ public class Fire : MonoBehaviour
 
     private Transform m_target      = null;
     public float     m_speed       = 5;
-    public float     m_attenuation = 0.5f;
-
-    private Vector3 m_velocity;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +17,19 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_velocity += ( m_target.position - transform.position ) * m_speed;
-        m_velocity *= m_attenuation;
-        transform.position += m_velocity *= Time.deltaTime;
+        if(m_target != null){
+           if(Vector2.Distance(transform.position,m_target.position) > 0f){
+          transform.position = Vector2.MoveTowards(transform.position,m_target.position,m_speed*Time.deltaTime);
+          }
+        }else if(m_target == null){
+          Destroy(this.gameObject);
+       }
+        
+       
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Enemy"){
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Wall"){
             Destroy(gameObject);
         }
     }
