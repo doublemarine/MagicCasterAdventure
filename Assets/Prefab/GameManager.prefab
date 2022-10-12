@@ -61,8 +61,17 @@ MonoBehaviour:
   rows: 64
   floorTiles:
   - {fileID: 391583425430055784, guid: 2b1848681e06d5544b4b2633aaed4651, type: 3}
+  - {fileID: 1896638752457583896, guid: e6e06f8f984864144a0c019f42c1f004, type: 3}
+  - {fileID: 8594075535537610115, guid: 7c825dfdac77fb9468e3dc091606aaee, type: 3}
+  - {fileID: 7125386979273416641, guid: 28a28daa3dd09764097c15bf7f846cc3, type: 3}
+  - {fileID: 4083625007079263356, guid: a731053035d03c74da91fbb86762419d, type: 3}
   wallTiles:
-  - {fileID: 4008001387742707288, guid: 0c11fc2015b140c409c9b11367ee94e5, type: 3}
+  - {fileID: 362303961537260927, guid: 1fca2f9bccd3d874f9a471acbde3bafa, type: 3}
+  - {fileID: 7017828783899536409, guid: 8823c6881ee3c4f42965ef88730586e7, type: 3}
+  - {fileID: 288498823050569706, guid: 69f3c2fd73cae0245b9d68acd41eba3c, type: 3}
+  - {fileID: 842202451046128125, guid: 148717fee58f8b747aaa77293ff7a694, type: 3}
+  - {fileID: 2666301954898787474, guid: 5dff0395592bbff4a85e97e544dfe28b, type: 3}
+  - {fileID: 3345673869544277731, guid: bd005be1b41d6d54395be49ccc5817db, type: 3}
   outwallTiles:
   - {fileID: 3774836556219698419, guid: a3ca6317e1986b34091bd4ec07245948, type: 3}
   enemyTiles:
