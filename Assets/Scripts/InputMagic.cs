@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems; 
 
 public class InputMagic : MonoBehaviour
 {
@@ -21,12 +22,13 @@ public class InputMagic : MonoBehaviour
         inputField = inputField.GetComponent<InputField>();
         text = text.GetComponent<Text>();
         m_enemy = GameObject.FindWithTag("Enemy").transform;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        inputField.OnPointerClick(new PointerEventData(EventSystem.current));
     }
 
     public void InputText()
