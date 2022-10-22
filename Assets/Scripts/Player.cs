@@ -23,6 +23,11 @@ public class Player : MonoBehaviour
             heartCount--;
             heartArray[heartCount].SetActive(false);
         }
+        if(heartArray[0].activeSelf == false){
+            Loader.GameOverFlg = true;
+            anim.SetBool("die",true);
+            capsule.enabled = false;
+        }
     }
     // Start is called before the first frame update
     void Start()

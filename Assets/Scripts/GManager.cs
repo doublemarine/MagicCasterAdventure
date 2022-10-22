@@ -11,13 +11,15 @@ public class GManager : MonoBehaviour
 
     private List<Enemy> enemies;
 
+    
+
     private void Awake() {
         if(instance == null){
             instance = this;
         }else if(instance != this){
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        
         boardManager = GetComponent<BoardManager>();
         InitGame();
 
@@ -47,6 +49,6 @@ public class GManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
