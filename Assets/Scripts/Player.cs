@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public GameObject Camera;
     public GameObject[] heartArray = new GameObject[5];
     public LayerMask blockingLayer;
+    
     private CapsuleCollider2D capsule;
     private int heartCount;
     
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
     private Animator anim = null;
      private Rigidbody2D rb = null;
 
-
+   
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy"){
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
         capsule = GetComponent<CapsuleCollider2D>();
         fieldObject = GameObject.Find("Canvas");
         fieldObject.SetActive(false);
+        
         speed = 3f;
         heartCount = 5;
     }
@@ -52,6 +54,9 @@ public class Player : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.Slash)){
             fieldObject.SetActive(true);
+        }
+        else if(Input.GetKey(KeyCode.Tab)){
+            Application.Quit();
         }
             
         Move();
