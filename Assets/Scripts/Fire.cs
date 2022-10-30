@@ -25,7 +25,7 @@ public class Fire : MonoBehaviour
           Destroy(this.gameObject);
        }
         
-       
+       this.transform.LookAt(m_target.position);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
