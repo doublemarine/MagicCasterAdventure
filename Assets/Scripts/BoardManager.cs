@@ -8,10 +8,13 @@ public class BoardManager : MonoBehaviour
     private List<Vector3> gridPositions = new List<Vector3>();
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
+    public GameObject[] itemTiles;
     public GameObject[] outwallTiles;
     public GameObject[] enemyTiles;
+    public GameObject Exit;
 
     public int wallMinimum = 5, wallMaximum = 9;
+    public int itemMinimum = 1, itemMaximum = 9;
     public int enemyMinimum = 1, enemyMaximum = 9;
 
     
@@ -66,8 +69,11 @@ public class BoardManager : MonoBehaviour
         BoardSetUp();
         InitialiseList();
         LayoutObjectatRandom(wallTiles, wallMinimum, wallMaximum);
+        LayoutObjectatRandom(itemTiles, itemMinimum, itemMaximum);
        // int enemyCount = (int)Mathf.Log(level,2f);
         LayoutObjectatRandom(enemyTiles, enemyMinimum, enemyMaximum);
+
+        Instantiate(Exit, new Vector3(colums-1,rows-1,0),Quaternion.identity);
     }
         
     

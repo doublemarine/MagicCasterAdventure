@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +31,17 @@ public class Player : MonoBehaviour
             capsule.enabled = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Item"){
+            Destroy(other.gameObject);
+        }
+        else if(other.gameObject.tag == "Exit"){
+            Invoke("Restart",1f);
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,5 +98,9 @@ public class Player : MonoBehaviour
 
          //rbの回転をさせない様にする
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    public void Restart(){
+        SceneManager.LoadScene(1);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GManager : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class GManager : MonoBehaviour
     private bool playerturn = false;
 
     private List<Enemy> enemies;
-
+    public int level = 1;
+    private bool doingSetUp;
     
 
     private void Awake() {
