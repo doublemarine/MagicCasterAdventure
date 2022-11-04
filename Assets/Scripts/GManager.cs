@@ -22,7 +22,9 @@ public class GManager : MonoBehaviour
     public Text nowenemyCount;
     public GameObject levelImage;
     public GameObject[] ItemCount,EnemyCount;
-   
+    private bool stageclear;
+    public GameObject Exit;
+    public GameObject ExitText;
 
     private void Awake() {
         if(instance == null){
@@ -33,7 +35,7 @@ public class GManager : MonoBehaviour
         
         boardManager = GetComponent<BoardManager>();
         InitGame();
-
+        ExitText.SetActive(false);
         //enemies = new List<Enemy>();
     }
 
@@ -86,7 +88,7 @@ public class GManager : MonoBehaviour
         EnemyCount = GameObject.FindGameObjectsWithTag("Enemy");
         itemCount.text = ItemCount.Length.ToString();
         enemyCount.text = EnemyCount.Length.ToString();
-        
+        stageclear = false;
     }
 
     // Update is called once per frame
@@ -97,5 +99,20 @@ public class GManager : MonoBehaviour
         }
         nowitemCount.text = items.Count.ToString();
         nowenemyCount.text = enemies.Count.ToString();
+
+        if(nowitemCount.text == itemCount.text && nowenemyCount.text == enemyCount.text){
+            stageclear = true;
+            Instantiate(Exit, new Vector3(BoardManager.colums-1,BoardManager.rows-1,0),Quaternion.identity);
+            itemCount.text = "clear";
+            enemyCount.text = "clear";
+            ExitText.SetActive(true);
+        }else if(stageclear == true){
+            stageclear = false;
+        }
+        else{
+            ExitText.SetActive(false);
+        }
     }
+
+
 }

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
-    public int colums = 8, rows = 8;
+    public static int colums = 64, rows = 64;
     private List<Vector3> gridPositions = new List<Vector3>();
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
     public GameObject[] itemTiles;
     public GameObject[] outwallTiles;
     public GameObject[] enemyTiles;
-    public GameObject Exit;
+    
 
     public int wallMinimum = 5, wallMaximum = 9;
     public int itemMinimum = 1, itemMaximum = 9;
@@ -73,7 +73,7 @@ public class BoardManager : MonoBehaviour
        // int enemyCount = (int)Mathf.Log(level,2f);
         LayoutObjectatRandom(enemyTiles, enemyMinimum, enemyMaximum);
  
-        Instantiate(Exit, new Vector3(colums-1,rows-1,0),Quaternion.identity);
+        
     }
         
     

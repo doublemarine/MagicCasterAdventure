@@ -45,6 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe4f69fc61426448147cccce2f06d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: []
+  items: []
+  level: 1
+  levelText: {fileID: 0}
+  itemCount: {fileID: 0}
+  nowitemCount: {fileID: 0}
+  enemyCount: {fileID: 0}
+  nowenemyCount: {fileID: 0}
+  levelImage: {fileID: 0}
+  ItemCount: []
+  EnemyCount: []
+  Exit: {fileID: 5385944044147714111, guid: f2c8167bd99dc4d48b3c978986b54e0a, type: 3}
+  ExitText: {fileID: 993340917041225957, guid: 45160c776e3df784098c199efae45d06, type: 3}
 --- !u!114 &4854913913691682859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,8 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51da515858b17d4db8fca6cd2979d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colums: 64
-  rows: 64
   floorTiles:
   - {fileID: 391583425430055784, guid: 2b1848681e06d5544b4b2633aaed4651, type: 3}
   - {fileID: 1896638752457583896, guid: e6e06f8f984864144a0c019f42c1f004, type: 3}
@@ -82,7 +93,6 @@ MonoBehaviour:
   - {fileID: 3774836556219698419, guid: a3ca6317e1986b34091bd4ec07245948, type: 3}
   enemyTiles:
   - {fileID: 4496958579999389541, guid: 287a5482b82430543a01906cb25fc9f8, type: 3}
-  Exit: {fileID: 5385944044147714111, guid: f2c8167bd99dc4d48b3c978986b54e0a, type: 3}
   wallMinimum: 350
   wallMaximum: 500
   itemMinimum: 1
