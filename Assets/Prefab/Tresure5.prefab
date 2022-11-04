@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1706009612384608700}
   - component: {fileID: 253753143576675065}
   - component: {fileID: -3124386413445640507}
+  - component: {fileID: -1877035361851450248}
   m_Layer: 0
   m_Name: Tresure5
   m_TagString: Item
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1877035361851450248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457096221708929457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6871be9f61909b4582f10ba5e04bab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

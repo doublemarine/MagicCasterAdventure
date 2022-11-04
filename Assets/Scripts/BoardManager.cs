@@ -72,7 +72,7 @@ public class BoardManager : MonoBehaviour
         LayoutObjectatRandom(itemTiles, itemMinimum, itemMaximum);
        // int enemyCount = (int)Mathf.Log(level,2f);
         LayoutObjectatRandom(enemyTiles, enemyMinimum, enemyMaximum);
-
+ 
         Instantiate(Exit, new Vector3(colums-1,rows-1,0),Quaternion.identity);
     }
         

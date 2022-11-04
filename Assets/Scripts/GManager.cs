@@ -12,6 +12,7 @@ public class GManager : MonoBehaviour
     private bool playerturn = false;
 
     public List<Enemy> enemies;
+    public List<Item> items;
     public int level = 1;
     private bool doingSetUp;
     public Text levelText;
@@ -94,7 +95,7 @@ public class GManager : MonoBehaviour
         if(doingSetUp){
             return;
         }
-        
+        nowitemCount.text = items.Count.ToString();
         nowenemyCount.text = enemies.Count.ToString();
     }
 }

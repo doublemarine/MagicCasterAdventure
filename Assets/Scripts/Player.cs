@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Item"){
             Destroy(other.gameObject);
+            GManager.instance.items.Add(Item.instance);
         }
         else if(other.gameObject.tag == "Exit"){
             Invoke("Restart",1f);

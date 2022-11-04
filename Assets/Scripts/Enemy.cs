@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     float speed;
     public float     m_attenuation = 0.1f;
-
+    public static Enemy instance;
     private Vector3 m_velocity;
 private Animator anim = null;
 private Transform target;
@@ -21,7 +21,7 @@ public static int EnemyHp;
 
             if(EnemyHp <= 0){
                gameObject.SetActive(false);
-              
+               GManager.instance.enemies.Add(instance);
             }
             
         }

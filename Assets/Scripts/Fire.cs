@@ -33,6 +33,7 @@ public class Fire : MonoBehaviour
             Destroy(gameObject);
         }else if(other.gameObject.tag == "Enemy"){
             Enemy.EnemyHp -= 30; 
+            Destroy(gameObject);
         }
     }
 }
