@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             heartCount--;
             heartArray[heartCount].SetActive(false);
+            anim.SetBool("hit",true);
+            Invoke("Revive",0.2f);
         }
         if(heartArray[0].activeSelf == false){
             Loader.GameOverFlg = true;
@@ -41,6 +43,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Revive(){
+        anim.SetBool("hit",false);
+    }
 
     // Start is called before the first frame update
     void Start()
