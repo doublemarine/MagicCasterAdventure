@@ -16,7 +16,7 @@ public class BoardManager : MonoBehaviour
     public int wallMinimum = 5, wallMaximum = 9;
     public int itemMinimum = 1, itemMaximum = 9;
     public int enemyMinimum = 1, enemyMaximum = 9;
-
+    
     
     void InitialiseList(){
         gridPositions.Clear();

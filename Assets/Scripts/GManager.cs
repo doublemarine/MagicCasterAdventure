@@ -11,11 +11,17 @@ public class GManager : MonoBehaviour
     private bool enemiesMoving = false;
     private bool playerturn = false;
 
-    private List<Enemy> enemies;
+    public List<Enemy> enemies;
     public int level = 1;
     private bool doingSetUp;
     public Text levelText;
+    public Text itemCount;
+    public Text nowitemCount;
+    public Text enemyCount;
+    public Text nowenemyCount;
     public GameObject levelImage;
+    public GameObject[] ItemCount,EnemyCount;
+   
 
     private void Awake() {
         if(instance == null){
@@ -47,8 +53,14 @@ public class GManager : MonoBehaviour
         levelText.text = "Stage" + level;
         levelImage.SetActive(true);
         Invoke("HideLevelImage",2f);
+        itemCount = GameObject.Find("ItemCount").GetComponent<Text>();
+        enemyCount = GameObject.Find("EnemyCount").GetComponent<Text>();
+        nowitemCount = GameObject.Find("NowItemCount").GetComponent<Text>();
+        nowenemyCount = GameObject.Find("NowEnemyCount").GetComponent<Text>();
+       
 
         boardManager.SetupScene();
+
         //enemies.Clear();
     }
 
@@ -69,6 +81,10 @@ public class GManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ItemCount = GameObject.FindGameObjectsWithTag("Item");
+        EnemyCount = GameObject.FindGameObjectsWithTag("Enemy");
+        itemCount.text = ItemCount.Length.ToString();
+        enemyCount.text = EnemyCount.Length.ToString();
         
     }
 
@@ -78,6 +94,7 @@ public class GManager : MonoBehaviour
         if(doingSetUp){
             return;
         }
-       
+        
+        nowenemyCount.text = enemies.Count.ToString();
     }
 }

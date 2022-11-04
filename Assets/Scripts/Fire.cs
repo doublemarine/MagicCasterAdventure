@@ -31,6 +31,8 @@ public class Fire : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Wall"){
             Destroy(gameObject);
+        }else if(other.gameObject.tag == "Enemy"){
+            Enemy.EnemyHp -= 30; 
         }
     }
 }
