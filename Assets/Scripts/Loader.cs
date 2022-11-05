@@ -28,9 +28,9 @@ public class Loader : MonoBehaviour
         if(GameOverFlg == true){
            GameOverPanel.SetActive(true);  
         }
-        if(GManager.stageclear){
+        if(GManager.instance.itemCount.text == "clear" && GManager.instance.enemyCount.text == "clear"){
             ExitText.SetActive(true);
-        }else{
+        }else {
             ExitText.SetActive(false);
         }
        
