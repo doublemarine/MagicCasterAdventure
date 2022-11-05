@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
         }
         else if(other.gameObject.tag == "Exit"){
             Invoke("Restart",1f);
+            //GManager.instance.ExitText.SetActive(false);
         }
     }
 

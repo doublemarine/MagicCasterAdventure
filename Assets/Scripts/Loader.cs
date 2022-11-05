@@ -8,6 +8,7 @@ public class Loader : MonoBehaviour
     public GameObject gameManager;
     public static bool GameOverFlg;
     public GameObject GameOverPanel;
+    public  GameObject ExitText;
 
     public void Awake() {
         if(GManager.instance == null){
@@ -19,15 +20,19 @@ public class Loader : MonoBehaviour
     {
         GameOverFlg = false;
         GameOverPanel.SetActive(false);
+        
     }
 
     void Update()
     {
         if(GameOverFlg == true){
-           GameOverPanel.SetActive(true);
-           
+           GameOverPanel.SetActive(true);  
         }
-       
+        if(GManager.stageclear){
+            ExitText.SetActive(true);
+        }else{
+            ExitText.SetActive(false);
+        }
        
     }
 
