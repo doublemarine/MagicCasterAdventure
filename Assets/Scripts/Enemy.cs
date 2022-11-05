@@ -18,6 +18,7 @@ public static int EnemyHp;
            anim.SetBool("attack",true);
         }else if(other.gameObject.tag == "PlayerMagic"){
            anim.SetBool("hit",true);
+           Invoke("Revive",1f);
 
             if(EnemyHp <= 0){
                gameObject.SetActive(false);
@@ -31,8 +32,12 @@ public static int EnemyHp;
         if(other.gameObject.tag == "Player"){
            anim.SetBool("attack",false);
         }else if(other.gameObject.tag == "PlayerMagic"){
-            anim.SetBool("hit",false);
+            //anim.SetBool("hit",false);
         }
+    }
+
+    public void Revive(){
+        anim.SetBool("hit",false);
     }
 
     void Awake(){
