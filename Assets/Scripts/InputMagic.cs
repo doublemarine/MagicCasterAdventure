@@ -12,7 +12,8 @@ public class InputMagic : MonoBehaviour
     public GameObject fire;
     public GameObject dark;
     public GameObject redtyphoon;
-    public GameObject Player;
+    public GameObject heal;
+    public GameObject player;
     private Transform m_enemy = null;
 
     // Start is called before the first frame update
@@ -46,12 +47,22 @@ public class InputMagic : MonoBehaviour
         else if(text.text == "redtyphoon"){
             RedTyphoon();
             inputField.text = "";
+            //Reset(redtyphoon);
+        }
+        else if(text.text == "heal"){
+            Heal();
+            inputField.text = "";
+            ResetHeal(heal);
         }
     }
 
+    public void ResetHeal(GameObject magic){
+        magic = GameObject.FindWithTag("heal");
+        Destroy(magic,1f);
+    }
     public void Fire()
     {
-        Instantiate(fire, Player.transform.position, Quaternion.identity);
+        Instantiate(fire, player.transform.position, Quaternion.identity);
     }
 
     public void Dark(){
@@ -59,6 +70,13 @@ public class InputMagic : MonoBehaviour
     }
 
     public void RedTyphoon(){
-        Instantiate(redtyphoon,new Vector3(Player.transform.position.x + 5,Player.transform.position.y,Player.transform.position.z), Quaternion.identity);
+        Instantiate(redtyphoon,new Vector3(player.transform.position.x + 5,player.transform.position.y,player.transform.position.z), Quaternion.identity);
     }
+
+    public void Heal(){
+        Instantiate(heal,player.transform.position,Quaternion.identity);
+        Player.Isheal = true;
+
+    }
+
 }

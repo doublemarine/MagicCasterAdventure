@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public GameObject Camera;
     public GameObject[] heartArray = new GameObject[5];
     public LayerMask blockingLayer;
-    
+    public static bool Isheal;
     private CapsuleCollider2D capsule;
     private int heartCount;
     
@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
             heartArray[heartCount].SetActive(false);
             anim.SetBool("hit",true);
             Invoke("Revive",0.2f);
+            Debug.Log(heartCount);
         }
         if(heartArray[0].activeSelf == false){
             Loader.GameOverFlg = true;
@@ -57,9 +58,10 @@ public class Player : MonoBehaviour
         capsule = GetComponent<CapsuleCollider2D>();
         fieldObject = GameObject.Find("Canvas");
         fieldObject.SetActive(false);
-        
+        Isheal = false;
         speed = 3f;
         heartCount = 5;
+        Debug.Log(heartCount);
     }
 
     // Update is called once per frame
@@ -71,7 +73,7 @@ public class Player : MonoBehaviour
              fieldObject.SetActive(false);
              
         }
-        else if(Input.GetKey(KeyCode.Slash)){
+        else if(Input.GetKey(KeyCode.Space)){
             fieldObject.SetActive(true);
         }
         else if(Input.GetKey(KeyCode.Tab)){
@@ -79,6 +81,17 @@ public class Player : MonoBehaviour
         }
             
         Move();
+        HealIs();
+    }
+
+    public void HealIs(){
+       if(Isheal == true){
+        Isheal = false;
+        heartArray[heartCount].SetActive(true);
+        if(heartArray[4].activeSelf == true){
+            return;
+        }
+       }
     }
 
     public void Move(){

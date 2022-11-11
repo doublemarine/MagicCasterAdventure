@@ -25,7 +25,10 @@ public class Fire : MonoBehaviour
           Destroy(this.gameObject);
        }
         
-       this.transform.LookAt(m_target.position);
+    //    //this.transform.LookAt(m_target.position);
+    //    Vector3 diff = (m_target.gameObject.transform.position - this.transform.position);
+    //    this.transform.rotation = Quaternion.FromToRotation (Vector3.up, diff);
+     LookAt2D(this.transform,m_target);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -36,4 +39,12 @@ public class Fire : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public static void LookAt2D(Transform self, Transform _target)
+	{
+	    var current = self.position;
+	    var direction = _target.position - current;
+	    var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+	    self.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+	}
 }
