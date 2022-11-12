@@ -10,6 +10,7 @@ public class InputMagic : MonoBehaviour
     public InputField inputField;
     public Text text;
     public GameObject fire;
+    public GameObject greenfire;
     public GameObject dark;
     public GameObject redtyphoon;
     public GameObject heal;
@@ -53,6 +54,9 @@ public class InputMagic : MonoBehaviour
             Heal();
             inputField.text = "";
             ResetHeal(heal);
+        }else if(text.text == "fire_bullet"){
+            Fire_Bullet();
+            inputField.text = "";
         }
     }
 
@@ -77,6 +81,12 @@ public class InputMagic : MonoBehaviour
         Instantiate(heal,player.transform.position,Quaternion.identity);
         Player.Isheal = true;
 
+    }
+
+    public void Fire_Bullet(){
+        for(int i=0; i<3; i++){
+            Instantiate(greenfire,player.transform.position,Quaternion.identity);
+        }
     }
 
 }
