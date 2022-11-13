@@ -24,6 +24,8 @@ public class GManager : MonoBehaviour
     public GameObject[] ItemCount,EnemyCount;
     public static bool stageclear;
     public GameObject Exit;
+    public AudioClip GateSe;
+    AudioSource audioSource;
     
     private void Awake() {
         if(instance == null){
@@ -88,7 +90,7 @@ public class GManager : MonoBehaviour
         itemCount.text = ItemCount.Length.ToString();
         enemyCount.text = EnemyCount.Length.ToString();
         stageclear = false;
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -107,6 +109,7 @@ public class GManager : MonoBehaviour
             Instantiate(Exit, new Vector3(BoardManager.colums-1,BoardManager.rows-1,0),Quaternion.identity);
             itemCount.text = "clear";
             enemyCount.text = "clear";
+            audioSource.PlayOneShot(GateSe);
         }else if(stageclear == true){
             stageclear = false;
 

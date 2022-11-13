@@ -16,6 +16,7 @@ public class InputMagic : MonoBehaviour
     public GameObject heal;
     public GameObject player;
     private Transform m_enemy = null;
+    
 
     // Start is called before the first frame update
     void Start()

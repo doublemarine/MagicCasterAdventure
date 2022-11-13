@@ -12,6 +12,7 @@ private Animator anim = null;
 private Transform target;
 private bool skipMove = false;
 public static int EnemyHp;
+private CapsuleCollider2D capsule;
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Player"){
@@ -21,8 +22,10 @@ public static int EnemyHp;
            Invoke("Revive",1f);
 
             if(EnemyHp <= 0){
-               gameObject.SetActive(false);
+               anim.SetBool("die",true); 
+               Invoke("DIE",0.5f);
                GManager.instance.enemies.Add(instance);
+               capsule.enabled = false;
             }
             
         }
@@ -36,6 +39,9 @@ public static int EnemyHp;
         }
     }
 
+    public void DIE(){
+       gameObject.SetActive(false);
+    }
     public void Revive(){
         anim.SetBool("hit",false);
     }
@@ -50,7 +56,7 @@ public static int EnemyHp;
     {
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
-       
+        capsule = GetComponent<CapsuleCollider2D>();
         speed = speed * GManager.instance.level;
         EnemyHp = EnemyHp * GManager.instance.level;
         

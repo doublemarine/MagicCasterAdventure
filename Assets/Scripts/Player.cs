@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     private float speed;
     private Animator anim = null;
      private Rigidbody2D rb = null;
-
+    public AudioClip spell;
+    AudioSource audioSource;
    
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -62,6 +63,7 @@ public class Player : MonoBehaviour
         speed = 3f;
         heartCount = 5;
         Debug.Log(heartCount);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -71,7 +73,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Return)){
              fieldObject.SetActive(false);
-             
+             audioSource.PlayOneShot(spell);
         }
         else if(Input.GetKey(KeyCode.Space)){
             fieldObject.SetActive(true);
