@@ -26,8 +26,7 @@ private CapsuleCollider2D capsule;
                Invoke("DIE",0.5f);
                GManager.instance.enemies.Add(instance);
                capsule.enabled = false;
-            }
-            
+            } 
         }
     }
 
@@ -39,6 +38,16 @@ private CapsuleCollider2D capsule;
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+         if(other.gameObject.tag == "Dark"){
+            speed = speed / 2;
+            Invoke("ResetSpeed",5f);
+        }
+    }
+
+    public void ResetSpeed(){
+        speed = speed * 2;
+    }
     public void DIE(){
        gameObject.SetActive(false);
     }

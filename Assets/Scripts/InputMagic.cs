@@ -65,17 +65,18 @@ public class InputMagic : MonoBehaviour
         magic = GameObject.FindWithTag("heal");
         Destroy(magic,1f);
     }
+   
     public void Fire()
     {
         Instantiate(fire, player.transform.position, Quaternion.identity);
     }
 
     public void Dark(){
-        Instantiate(dark, m_enemy.transform.position,Quaternion.identity);
+        Instantiate(dark, player.transform.position,Quaternion.identity);
     }
 
     public void RedTyphoon(){
-        Instantiate(redtyphoon,new Vector3(player.transform.position.x + 5,player.transform.position.y,player.transform.position.z), Quaternion.identity);
+        Instantiate(redtyphoon,new Vector3(player.transform.position.x + 2.5f,player.transform.position.y,player.transform.position.z), Quaternion.identity);
     }
 
     public void Heal(){

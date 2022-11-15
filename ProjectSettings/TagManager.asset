@@ -9,6 +9,9 @@ TagManager:
   - Wall
   - Exit
   - Item
+  - heal
+  - Dark
+  - typhoon
   layers:
   - Default
   - TransparentFX

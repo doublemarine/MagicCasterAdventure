@@ -25,6 +25,7 @@ public class GManager : MonoBehaviour
     public static bool stageclear;
     public GameObject Exit;
     public AudioClip GateSe;
+    
     AudioSource audioSource;
     
     private void Awake() {
@@ -114,7 +115,7 @@ public class GManager : MonoBehaviour
             stageclear = false;
 
         }
-
+        
         
         
     }

@@ -2935,6 +2935,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194225}
     - target: {fileID: 7391460947961771906, guid: 02310eb1f23d03b4ea1fb1526ed68e9a, type: 3}
+      propertyPath: damage
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c0b92f332ec09b429a3577d35b73a1a, type: 3}
+    - target: {fileID: 7391460947961771906, guid: 02310eb1f23d03b4ea1fb1526ed68e9a, type: 3}
       propertyPath: QuitDebug
       value: 
       objectReference: {fileID: 0}

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public GameObject[] heartArray = new GameObject[5];
     public LayerMask blockingLayer;
     public static bool Isheal;
+    private bool IsSpell;
     private CapsuleCollider2D capsule;
     private int heartCount;
     
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     private Animator anim = null;
      private Rigidbody2D rb = null;
     public AudioClip spell;
+    public AudioClip damage;
     AudioSource audioSource;
    
 
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
             heartArray[heartCount].SetActive(false);
             anim.SetBool("hit",true);
             Invoke("Revive",0.2f);
-            Debug.Log(heartCount);
+            audioSource.PlayOneShot(damage);
         }
         if(heartArray[0].activeSelf == false){
             Loader.GameOverFlg = true;
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour
         heartCount = 5;
         Debug.Log(heartCount);
         audioSource = GetComponent<AudioSource>();
+        IsSpell = false;
     }
 
     // Update is called once per frame
@@ -71,12 +74,15 @@ public class Player : MonoBehaviour
     {
        Camera.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z - 5);
 
-        if(Input.GetKey(KeyCode.Return)){
+        if(Input.GetKey(KeyCode.Return) && IsSpell == true){
              fieldObject.SetActive(false);
              audioSource.PlayOneShot(spell);
+             Debug.Log("shot");
+             IsSpell = false;
         }
         else if(Input.GetKey(KeyCode.Space)){
             fieldObject.SetActive(true);
+            IsSpell = true;
         }
         else if(Input.GetKey(KeyCode.Tab)){
             Application.Quit();

@@ -59,6 +59,7 @@ MonoBehaviour:
   EnemyCount: []
   Exit: {fileID: 5385944044147714111, guid: f2c8167bd99dc4d48b3c978986b54e0a, type: 3}
   GateSe: {fileID: 8300000, guid: 8db32bb9004ac014f99aed138f7a2569, type: 3}
+  GameOverSe: {fileID: 8300000, guid: 827da07d097735b4f8ed86061e753e2c, type: 3}
 --- !u!114 &4854913913691682859
 MonoBehaviour:
   m_ObjectHideFlags: 0

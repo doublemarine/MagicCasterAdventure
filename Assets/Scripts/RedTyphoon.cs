@@ -21,4 +21,12 @@ public class RedTyphoon : MonoBehaviour
     {
         rb.velocity = new Vector3(speed,0,0);
     }
+
+    private void OnEnable() {
+        Invoke("Reset",7f);
+    }
+
+    public void Reset(){
+        Destroy(gameObject);
+    }
 }
