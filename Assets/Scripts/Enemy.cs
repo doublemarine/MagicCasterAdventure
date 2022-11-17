@@ -49,7 +49,8 @@ private CapsuleCollider2D capsule;
         speed = speed * 2;
     }
     public void DIE(){
-       gameObject.SetActive(false);
+      // gameObject.SetActive(false);
+      Destroy(gameObject);
     }
     public void Revive(){
         anim.SetBool("hit",false);
@@ -68,6 +69,7 @@ private CapsuleCollider2D capsule;
         capsule = GetComponent<CapsuleCollider2D>();
         speed = speed * GManager.instance.level;
         EnemyHp = EnemyHp * GManager.instance.level;
+        Debug.Log(EnemyHp);
         
     }
 
