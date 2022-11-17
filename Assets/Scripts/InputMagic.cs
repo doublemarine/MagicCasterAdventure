@@ -15,6 +15,7 @@ public class InputMagic : MonoBehaviour
     public GameObject redtyphoon;
     public GameObject heal;
     public GameObject player;
+    public GameObject T_search;
     private Transform m_enemy = null;
     
 
@@ -25,7 +26,7 @@ public class InputMagic : MonoBehaviour
         inputField = inputField.GetComponent<InputField>();
         text = text.GetComponent<Text>();
         m_enemy = GameObject.FindWithTag("Enemy").transform;
-        
+        T_search.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,6 +59,9 @@ public class InputMagic : MonoBehaviour
         }else if(text.text == "fire_bullet"){
             Fire_Bullet();
             inputField.text = "";
+        }else if(text.text == "search"){
+            StartCoroutine(SearchCoroutine());
+            inputField.text = "";
         }
     }
 
@@ -66,6 +70,18 @@ public class InputMagic : MonoBehaviour
         Destroy(magic,1f);
     }
    
+    private IEnumerator SearchCoroutine()
+    {
+        T_search.SetActive(true);
+        // 3秒間待つ
+        // Time.timeScale の影響を受けずに実時間で3秒待つ
+        yield return new WaitForSecondsRealtime(5);
+
+        T_search.SetActive(false);
+    }
+    // public void Search(){
+    //     T_search.SetActive(true);
+    // }
     public void Fire()
     {
         Instantiate(fire, player.transform.position, Quaternion.identity);

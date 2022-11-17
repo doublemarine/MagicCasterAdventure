@@ -130,6 +130,8 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 0
+  spell: {fileID: 0}
+  damage: {fileID: 0}
 --- !u!50 &7391460947961771917
 Rigidbody2D:
   serializedVersion: 4

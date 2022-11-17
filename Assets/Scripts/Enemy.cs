@@ -57,8 +57,7 @@ private CapsuleCollider2D capsule;
     }
 
     void Awake(){
-         speed = 0.5f;
-        EnemyHp = 10;
+         
         
     }
     // Start is called before the first frame update
@@ -67,10 +66,12 @@ private CapsuleCollider2D capsule;
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
         capsule = GetComponent<CapsuleCollider2D>();
+        speed = 0.5f;
+        EnemyHp = 10;
         speed = speed * GManager.instance.level;
         EnemyHp = EnemyHp * GManager.instance.level;
         Debug.Log(EnemyHp);
-        
+        Debug.Log(GManager.instance.level);
     }
 
     // Update is called once per frame
