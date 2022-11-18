@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private bool IsSpell;
     private CapsuleCollider2D capsule;
     private int heartCount;
-    
+    public static int level = 1;
     private GameObject fieldObject;
     private float speed;
     private Animator anim = null;
@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
         Debug.Log(heartCount);
         audioSource = GetComponent<AudioSource>();
         IsSpell = false;
+        
     }
 
     // Update is called once per frame
@@ -129,6 +130,7 @@ public class Player : MonoBehaviour
     }
 
     public void Restart(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("SampleScene");
+       //GManager.instance.level++;
     }
 }

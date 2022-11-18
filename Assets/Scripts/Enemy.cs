@@ -68,10 +68,10 @@ private CapsuleCollider2D capsule;
         capsule = GetComponent<CapsuleCollider2D>();
         speed = 0.5f;
         EnemyHp = 10;
-        speed = speed * GManager.instance.level;
-        EnemyHp = EnemyHp * GManager.instance.level;
+        speed = speed * Player.level;
+        EnemyHp = EnemyHp * Player.level;
         Debug.Log(EnemyHp);
-        Debug.Log(GManager.instance.level);
+        Debug.Log(Player.level);
     }
 
     // Update is called once per frame

@@ -17,6 +17,6 @@ public class MagicText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        magicText.text = "「" + magic[GManager.instance.level-1] + "」" + "を覚えた！";
+        magicText.text = "「" + magic[Player.level-1] + "」" + "を覚えた！";
     }
 }

@@ -13,7 +13,7 @@ public class GManager : MonoBehaviour
 
     public List<Enemy> enemies;
     public List<Item> items;
-    public int level = 1;
+   // public int level = 1;
     private bool doingSetUp;
     public Text levelText;
     public Text itemCount;
@@ -44,18 +44,21 @@ public class GManager : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static public void Call(){
        SceneManager.sceneLoaded += OnSceneLoaded;
+       
     }
 
     static private void OnSceneLoaded(Scene next, LoadSceneMode a){
-        instance.level++;
+        Player.level++;
+        instance.enemies.Clear();
+        instance.items.Clear();
        instance.InitGame();
     }
     public void InitGame(){
         doingSetUp = true;
-
+        
         levelImage = GameObject.Find("LevelImage");
         levelText = GameObject.Find("LevelText").GetComponent<Text>();
-        levelText.text = "Stage" + level;
+        levelText.text = "Stage" + Player.level;
         levelImage.SetActive(true);
         Invoke("HideLevelImage",2f);
         itemCount = GameObject.Find("ItemCount").GetComponent<Text>();
@@ -92,6 +95,7 @@ public class GManager : MonoBehaviour
         enemyCount.text = EnemyCount.Length.ToString();
         stageclear = false;
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
