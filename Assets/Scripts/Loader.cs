@@ -43,7 +43,8 @@ public class Loader : MonoBehaviour
     public void Continue(){
        SceneManager.LoadScene("SampleScene");
             Instantiate(gameManager);
-        //GManager.instance.level = 1;
+        Player.level = 0;
+        
     }
 
     public void Exit(){

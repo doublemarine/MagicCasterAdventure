@@ -65,7 +65,8 @@ public class GManager : MonoBehaviour
         enemyCount = GameObject.Find("EnemyCount").GetComponent<Text>();
         nowitemCount = GameObject.Find("NowItemCount").GetComponent<Text>();
         nowenemyCount = GameObject.Find("NowEnemyCount").GetComponent<Text>();
-       
+        instance.enemies.Clear();
+        instance.items.Clear();
 
         boardManager.SetupScene();
 

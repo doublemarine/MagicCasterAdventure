@@ -10,15 +10,16 @@ public class SearchItem : MonoBehaviour
     void Start()
     {
         
-        if(m_item == null){
-            return;
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         m_item = GameObject.FindWithTag("Item").transform;
+        if(m_item == null){
+            m_item = GameObject.FindWithTag("Exit").transform;
+        }
         LookAt2D(this.transform,m_item);
     }
 
